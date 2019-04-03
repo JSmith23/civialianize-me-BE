@@ -1,0 +1,2 @@
+class VaLocation < ApplicationRecord
+end
