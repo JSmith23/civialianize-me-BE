@@ -47,6 +47,7 @@ group :development, :test do
   gem 'faker'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'rb-readline'
 end
 
 group :development do
