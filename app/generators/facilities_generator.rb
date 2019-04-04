@@ -6,7 +6,7 @@ class FacilitiesGenerator
     @va = VaService.new(@geo).get_facilities
   end
 
-  def get_facilities
+  def facilities
     va = @va
     va.map do |va_data|
       Facilities.new(va_data)
