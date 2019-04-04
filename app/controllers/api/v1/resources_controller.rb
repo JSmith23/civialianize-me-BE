@@ -7,4 +7,9 @@ class Api::V1::ResourcesController < ApplicationController
     end
     render json: ResourcesSerializer.new(resources)
   end
+
+  def show
+    resource = Resource.where(id: "#{params[:id]}")
+    render json: ResourceSerializer.new(resource)
+  end
 end
