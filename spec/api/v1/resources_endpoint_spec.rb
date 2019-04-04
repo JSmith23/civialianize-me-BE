@@ -4,7 +4,7 @@ describe 'Resources API' do
   it 'can return index of resources' do
     resource_1= Resource.create(name: 'my resources_1', category: 'medical', url:'myresource_1.com')
     resource_2= Resource.create(name: 'my resources_2', category: 'housing', url:'myresource_2.com')
-    resource_3= Resource.create(name: 'my resources_3', category: 'jobs', url:'myresource_3.com')
+    resource_3= Resource.create(name: 'my resources_3', category: 'jobs', url:'myresource_3.com', phone: 3034575793)
 
     get "/api/v1/resources"
 
@@ -14,9 +14,11 @@ describe 'Resources API' do
     expect(favorites_json["data"][0]["attributes"]["name"]).to eq("my resources_1")
     expect(favorites_json["data"][0]["attributes"]["category"]).to eq("medical")
     expect(favorites_json["data"][0]["attributes"]["url"]).to eq("myresource_1.com")
+    expect(favorites_json["data"][0]["attributes"]["phone"]).to eq(nil)
     expect(favorites_json["data"][2]["attributes"]["name"]).to eq("my resources_3")
     expect(favorites_json["data"][2]["attributes"]["category"]).to eq("jobs")
     expect(favorites_json["data"][2]["attributes"]["url"]).to eq("myresource_3.com")
+    expect(favorites_json["data"][2]["attributes"]["phone"]).to eq(3034575793)
   end
   it 'can return all resources of one category' do
     resource_1= Resource.create(name: 'my resources_1', category: 'medical', url:'myresource_1.com')
