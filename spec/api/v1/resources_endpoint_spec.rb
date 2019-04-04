@@ -38,4 +38,16 @@ describe 'Resources API' do
     expect(favorites_json["data"][1]["attributes"]["category"]).to eq("medical")
     expect(favorites_json["data"][1]["attributes"]["url"]).to eq("myresource_3.com")
   end
+  it 'can return one resource by id' do
+    resource_1= Resource.create(name: 'my resources_1', category: 'medical', url:'myresource_1.com')
+
+    get "/api/v1/resources/#{resource_1.id}"
+
+    favorites_json = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(favorites_json["data"][0]["attributes"]["name"]).to eq("my resources_1")
+    expect(favorites_json["data"][0]["attributes"]["category"]).to eq("medical")
+    expect(favorites_json["data"][0]["attributes"]["url"]).to eq("myresource_1.com")
+  end
 end
