@@ -56,14 +56,27 @@ describe 'Resources API' do
       category: "medical",
       url: "url",
     }
-    
+
     post "/api/v1/resources" , params: params
 
     favorites_json = JSON.parse(response.body)
 
     expect(response).to be_successful
-    expect(favorites_json["data"][0]["attributes"]["name"]).to eq("my resources_1")
-    expect(favorites_json["data"][0]["attributes"]["category"]).to eq("medical")
-    expect(favorites_json["data"][0]["attributes"]["url"]).to eq("myresource_1.com")
+    expect(favorites_json["data"]["attributes"]["name"]).to eq("resources")
+    expect(favorites_json["data"]["attributes"]["category"]).to eq("medical")
+    expect(favorites_json["data"]["attributes"]["url"]).to eq("url")
+    expect(favorites_json["data"]["attributes"]["phone"]).to eq(nil)
+  end
+  it 'can post a new resource with all params' do
+    params = {
+      name: "resources",
+      url: "url",
+    }
+
+    post "/api/v1/resources" , params: params
+
+    favorites_json = JSON.parse(response.body)
+
+    expect(response.status).to eq(404)
   end
 end

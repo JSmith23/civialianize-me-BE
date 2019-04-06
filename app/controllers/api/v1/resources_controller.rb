@@ -12,4 +12,20 @@ class Api::V1::ResourcesController < ApplicationController
     resource = Resource.where(id: "#{params[:id]}")
     render json: ResourceSerializer.new(resource)
   end
+
+  def create
+    resource = Resource.new(resource_params)
+    if resource.save
+      render json: ResourceSerializer.new(resource)
+    else
+      render status: 404
+    end
+  end
+
+  private
+
+  def resource_params
+    params.require(:resource).permit(:name, :category, :url, :phone)
+  end
+
 end
