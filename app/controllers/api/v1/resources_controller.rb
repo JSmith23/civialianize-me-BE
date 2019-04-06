@@ -14,12 +14,8 @@ class Api::V1::ResourcesController < ApplicationController
   end
 
   def create
-    resource = Resource.new(resource_params)
-    if resource.save
-      render json: ResourceSerializer.new(resource)
-    else
-      render status: 404
-    end
+    resource = Resource.create(resource_params)
+    render status: :created, json: ResourceSerializer.new(resource)
   end
 
   private
