@@ -59,13 +59,13 @@ describe 'Resources API' do
 
     post "/api/v1/resources" , params: {resource: params}
 
-    favorites_json = JSON.parse(response.body)
+    parsed_json = JSON.parse(response.body)
 
     expect(response).to have_http_status(:created)
-    expect(favorites_json["data"]["attributes"]["name"]).to eq("resources")
-    expect(favorites_json["data"]["attributes"]["category"]).to eq("medical")
-    expect(favorites_json["data"]["attributes"]["url"]).to eq("url")
-    expect(favorites_json["data"]["attributes"]["phone"]).to eq(nil)
+    expect(parsed_json["data"]["attributes"]["name"]).to eq("resources")
+    expect(parsed_json["data"]["attributes"]["category"]).to eq("medical")
+    expect(parsed_json["data"]["attributes"]["url"]).to eq("url")
+    expect(parsed_json["data"]["attributes"]["phone"]).to eq(nil)
   end
   it 'can post a new resource with all params' do
     params = {
@@ -74,9 +74,7 @@ describe 'Resources API' do
     }
 
     post "/api/v1/resources" , params: {resource: params}
-
-    favorites_json = JSON.parse(response.body)
-    expect(response).to have_http_status(:created)
-    expect(response.status).to eq(404)
+    parsed_json = JSON.parse(response.body)
+    expect(parsed_json['status']).to eq("Missing category")
   end
 end
