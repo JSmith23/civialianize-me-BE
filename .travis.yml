@@ -6,3 +6,6 @@ before_install:
 - gem install bundler
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
+env:
+- GEO_CODE_KEY = "AIzaSyA1XyOexfQmKoWw5fUMmOg35tixinOJ2Qc"
+- VA_API_KEy = "UKS6kBQoTIJ6C7U4044hUpsKltIQ731D"

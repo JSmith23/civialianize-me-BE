@@ -48,7 +48,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'rb-readline'
-  gem "factory_bot_rails"
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
