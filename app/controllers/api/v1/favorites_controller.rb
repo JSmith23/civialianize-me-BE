@@ -9,7 +9,13 @@ class Api::V1::FavoritesController < ApplicationController
 
   def create
     fav = Favorite.create(favorite_params)
-    render json: fav, status: 201
+    render json: fav
+  end
+
+  def update
+    fav = Favorite.find(params[:id])
+    fav.update(favorite_params)
+    render json: fav
   end
 
   def destroy
