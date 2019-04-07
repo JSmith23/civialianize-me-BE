@@ -38,4 +38,43 @@ describe 'Resources API' do
     expect(favorites_json["data"][1]["attributes"]["category"]).to eq("medical")
     expect(favorites_json["data"][1]["attributes"]["url"]).to eq("myresource_3.com")
   end
+  it 'can return one resource by id' do
+    resource_1= Resource.create(name: 'my resources_1', category: 'medical', url:'myresource_1.com')
+
+    get "/api/v1/resources/#{resource_1.id}"
+
+    favorites_json = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(favorites_json["data"][0]["attributes"]["name"]).to eq("my resources_1")
+    expect(favorites_json["data"][0]["attributes"]["category"]).to eq("medical")
+    expect(favorites_json["data"][0]["attributes"]["url"]).to eq("myresource_1.com")
+  end
+  it 'can post a new resource with all params' do
+    params = {
+      name: "resources",
+      category: "medical",
+      url: "url",
+    }
+
+    post "/api/v1/resources" , params: {resource: params}
+
+    parsed_json = JSON.parse(response.body)
+
+    expect(response).to have_http_status(:created)
+    expect(parsed_json["data"]["attributes"]["name"]).to eq("resources")
+    expect(parsed_json["data"]["attributes"]["category"]).to eq("medical")
+    expect(parsed_json["data"]["attributes"]["url"]).to eq("url")
+    expect(parsed_json["data"]["attributes"]["phone"]).to eq(nil)
+  end
+  it 'can post a new resource with all params' do
+    params = {
+      name: "resources",
+      url: "url",
+    }
+
+    post "/api/v1/resources" , params: {resource: params}
+    parsed_json = JSON.parse(response.body)
+    expect(parsed_json['status']).to eq("Missing category")
+  end
 end
