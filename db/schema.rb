@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_04_06_230732) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "phone"
+    t.string "phone"
   end
 
   create_table "va_locations", force: :cascade do |t|
