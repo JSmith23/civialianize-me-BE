@@ -18,7 +18,7 @@ describe 'Resources API' do
     expect(favorites_json["data"][2]["attributes"]["name"]).to eq("my resources_3")
     expect(favorites_json["data"][2]["attributes"]["category"]).to eq("jobs")
     expect(favorites_json["data"][2]["attributes"]["url"]).to eq("myresource_3.com")
-    expect(favorites_json["data"][2]["attributes"]["phone"]).to eq(3034575793)
+    expect(favorites_json["data"][2]["attributes"]["phone"]).to eq('3034575793')
   end
   it 'can return all resources of one category' do
     resource_1= Resource.create(name: 'my resources_1', category: 'medical', url:'myresource_1.com')
