@@ -25,7 +25,7 @@ class Api::V1::ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:name, :category, :url, :phone)
+    params.require(:resource).permit(:name, :category, :url, :phone, :logo, :description)
   end
 
 end
