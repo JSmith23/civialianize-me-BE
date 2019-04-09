@@ -1,3 +1,4 @@
+require 'faker'
 # Categories:
 # General, Employment, Housing, Stress Management, Healthcare, Crisis, Skill Training, Benefits
 
