@@ -20,21 +20,21 @@ ActiveRecord::Schema.define(version: 2019_04_09_164143) do
     t.string "category"
     t.string "url"
     t.string "phone"
-    t.string "logo"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "logo"
   end
 
   create_table "resources", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "phone"
     t.string "logo"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "va_locations", force: :cascade do |t|
