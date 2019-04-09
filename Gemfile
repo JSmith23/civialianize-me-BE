@@ -36,6 +36,7 @@ gem 'fast_jsonapi'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,7 +46,6 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'rb-readline'
