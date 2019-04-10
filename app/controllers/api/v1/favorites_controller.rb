@@ -26,6 +26,6 @@ class Api::V1::FavoritesController < ApplicationController
   private
 
   def favorite_params
-    params.permit(:name, :category, :url, :phone, :logo, :description)
+    params.permit(:name, :category, :url, :phone, :description, :logo)
   end
 end
