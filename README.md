@@ -641,6 +641,6 @@ name: "new_name", category: "housing", url: "www.google.com", phone: "773-226-54
 * [chromedriver-helper](http://chromedriver.chromium.org/)
 
 ## Authors
-**[Micheal Clampett](https://github.com/SyntheticAutomation)**
+**[Michael Clampett](https://github.com/SyntheticAutomation)**
 **[Maddie Jones](https://github.com/maddyg91)**
 **[Jimmy Smith](https://github.com/JSmith23)**
