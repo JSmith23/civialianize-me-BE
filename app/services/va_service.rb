@@ -21,5 +21,4 @@ class VaService
       faraday.adapter  Faraday.default_adapter
     end
   end
-
 end
