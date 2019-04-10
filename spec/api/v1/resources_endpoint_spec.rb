@@ -88,4 +88,14 @@ describe 'Resources API' do
     parsed_json = JSON.parse(response.body)
     expect(parsed_json['status']).to eq("Missing category")
   end
+  it 'cannot post a new resource without a url or a phone' do
+    params = {
+      name: "resources",
+      category: "medical",
+    }
+
+    post "/api/v1/resources" , params: {resource: params}
+    parsed_json = JSON.parse(response.body)
+    expect(parsed_json['status']).to eq("Missing category")
+  end
 end
