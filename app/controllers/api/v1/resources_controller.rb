@@ -14,7 +14,7 @@ class Api::V1::ResourcesController < ApplicationController
   end
 
   def create
-    if resource_params["category"] && resource_params["url"] || resource_params["phone"]
+    if resource_params["category"] && (resource_params["url"] || resource_params["phone"])
       resource = Resource.create(resource_params)
       render status: :created, json: ResourceSerializer.new(resource)
     else
