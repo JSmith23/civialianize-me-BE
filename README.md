@@ -32,9 +32,9 @@ The base URL you can use is https://powerful-reef-36769.herokuapp.com or http://
 
 The available endpoints are:
 
-- ```GET /api/v1/va_locations```
-  this endpoint takes a `location` param in the fromat `city,state`.
+# GET /api/v1/va_locations
 
+  this endpoint takes a `location` param in the fromat `city,state`.
   an example response looks like this:
   
   ```
@@ -81,10 +81,9 @@ The available endpoints are:
 ```
 
 
-- ```GET /api/v1/resources```
+# GET /api/v1/resources
 This return all the resources available in the database, it is possible to narrow the search down by adding a `category` param.  
-These are the category options: Benefits, General, Crisis, Healthcare,
-LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
+These are the category options: Benefits, General, Crisis, Healthcare,Employment, Housing, OEF/OIF/OND, Skill Training
 
  an example response with the category of General looks like this:
 
@@ -120,7 +119,7 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
 ```
 
 
-- ```GET /api/v1/resources/:id```
+# GET /api/v1/resources/:id
 
 ```
 {
@@ -141,7 +140,7 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
 }
 ```
 
-- ```GET /api/v1/favorites```
+# GET /api/v1/favorites
 ```
 {
     "data": [
@@ -172,8 +171,7 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
     ]
 }
 ```
-
-- ```GET /api/v1/favorites/:id```
+# GET /api/v1/favorites/:id
 ```
 {
     "data": {
@@ -190,27 +188,27 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
     }
 }
 ```
-- ```PUT /api/v1/favorites/:id```
+# PUT /api/v1/favorites/:id
 params that are required: `name`, `category`, `url`, `phone`, `logo`, `description`. They are all required in string format
 
-- ```POST /api/v1/favorites```
+# POST /api/v1/favorites
 params required: `name`, `category`, `url`, `phone`, `logo`, `description`.
 
 ```
-{
-    "id": 1,
-    "name": "Military One Source",
-    "category": "General",
-    "url": "https://www.militaryonesource.mil/",
-    "phone": "(800) 342-9647",
-    "created_at": "2019-04-10T20:34:23.042Z",
-    "updated_at": "2019-04-10T20:34:23.042Z",
-    "description": "Repudiandae asperiores atque. Rerum corporis expedita. Ipsum voluptate voluptates. In odio cumque. Minus natus quod.",
-    "logo": "https://i.imgur.com/Ggsrbto.png"
-}
+   {
+       "id": 1,
+       "name": "Military One Source",
+       "category": "General",
+       "url": "https://www.militaryonesource.mil/",
+       "phone": "(800) 342-9647",
+       "created_at": "2019-04-10T20:34:23.042Z",
+       "updated_at": "2019-04-10T20:34:23.042Z",
+       "description": "Repudiandae asperiores atque. Rerum corporis expedita. Ipsum voluptate voluptates. In odio cumque.                            Minus natus quod.",
+       "logo": "https://i.imgur.com/Ggsrbto.png"
+   }
 
 ```
-- ```DELETE /api/v1/favorites/:id```
+# DELETE /api/v1/favorites/:id
   Allows you to delete any favorite.
   
 
