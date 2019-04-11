@@ -208,11 +208,14 @@ params required: `name`, `category`, `url`, `phone`, `logo`, `description`.
     "description": "Repudiandae asperiores atque. Rerum corporis expedita. Ipsum voluptate voluptates. In odio cumque. Minus natus quod.",
     "logo": "https://i.imgur.com/Ggsrbto.png"
 }
+
 ```
 - ```DELETE /api/v1/favorites/:id```
   Allows you to delete any favorite.
+  
 
 ## How to run the test suite
+
 
   If you are interested in running out test suit you can do so by using the command `rspec`.
   We have both model, service and integration tests written and our Coverage using SimpleCov is as 100%.
