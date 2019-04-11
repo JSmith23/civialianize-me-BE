@@ -32,7 +32,7 @@ The base URL you can use is https://powerful-reef-36769.herokuapp.com or http://
 
 The available endpoints are:
 
-# GET /api/v1/va_locations
+### GET /api/v1/va_locations
 
   this endpoint takes a `location` param in the fromat `city,state`.
   an example response looks like this:
@@ -81,7 +81,7 @@ The available endpoints are:
 ```
 
 
-# GET /api/v1/resources
+### GET /api/v1/resources
 This return all the resources available in the database, it is possible to narrow the search down by adding a `category` param.  
 These are the category options: Benefits, General, Crisis, Healthcare,Employment, Housing, OEF/OIF/OND, Skill Training
 
@@ -119,7 +119,7 @@ These are the category options: Benefits, General, Crisis, Healthcare,Employment
 ```
 
 
-# GET /api/v1/resources/:id
+### GET /api/v1/resources/:id
 
 ```
 {
@@ -140,7 +140,7 @@ These are the category options: Benefits, General, Crisis, Healthcare,Employment
 }
 ```
 
-# GET /api/v1/favorites
+### GET /api/v1/favorites
 ```
 {
     "data": [
@@ -171,7 +171,7 @@ These are the category options: Benefits, General, Crisis, Healthcare,Employment
     ]
 }
 ```
-# GET /api/v1/favorites/:id
+### GET /api/v1/favorites/:id
 ```
 {
     "data": {
@@ -188,10 +188,10 @@ These are the category options: Benefits, General, Crisis, Healthcare,Employment
     }
 }
 ```
-# PUT /api/v1/favorites/:id
+### PUT /api/v1/favorites/:id
 params that are required: `name`, `category`, `url`, `phone`, `logo`, `description`. They are all required in string format
 
-# POST /api/v1/favorites
+### POST /api/v1/favorites
 params required: `name`, `category`, `url`, `phone`, `logo`, `description`.
 
 ```
@@ -208,7 +208,7 @@ params required: `name`, `category`, `url`, `phone`, `logo`, `description`.
    }
 
 ```
-# DELETE /api/v1/favorites/:id
+### DELETE /api/v1/favorites/:id
   Allows you to delete any favorite.
   
 
