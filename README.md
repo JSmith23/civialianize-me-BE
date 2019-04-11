@@ -7,38 +7,19 @@ In this API we gathered a lot of great resources and we have grouped them by cat
 You have also have the possibility of finding the neared VA facilities based on the location you input.
 
 ## Getting started
-Clone this repository to your local machine by running these commands:
+Clone this repository to your local machine by running this command:
 ```
 git clone https://github.com/maddyg91/civilianize-me-BE.git
+```
+then: 
+```
    cd civilianize-me-BE
 ```
 You should now be in the correct directory.
 
-Make sure your ruby version is ```2.5.1```, you can check this by typing ```ruby -v``` in your terminal. If your version is different we suggest updating to version ```2.5.1```.
+Make sure your ruby version is `2.5.1`, you can check this by typing `ruby -v` in your terminal. If your version is different we suggest updating to version `2.5.1`.
 
-These are the gems you will need to add to your Gemfile:
-- in the general Gemfile:
-    ```
-       gem 'fast_jsonapi'
-       gem 'faraday'
-       gem 'figaro'
-       gem 'faker'
-    ```
-- in the development testing group:
-    ```
-      gem 'rspec-rails'
-      gem 'capybara'
-      gem 'launchy'
-      gem 'pry'
-      gem 'factory_bot_rails'
-      gem 'simplecov'
-      gem 'shoulda-matchers'
-      gem 'rb-readline'
-      gem 'vcr'
-      gem 'webmock'
-    ```
-
-After adding these run this command:
+After run these commands:
 ```
   bundle
   rake db:{drop,create,migrate,seed}
@@ -51,8 +32,8 @@ The base URL you can use is https://powerful-reef-36769.herokuapp.com or http://
 
 The available endpoints are:
 
-- ```GET /api/v1/va_locations```
-  this endpoint takes a ```location``` param in the fromat ```city,state```.
+- `GET /api/v1/va_locations`
+  this endpoint takes a `location` param in the fromat `city,state`.
 
   an example response looks like this:
   ```
@@ -99,8 +80,8 @@ The available endpoints are:
 ```
 
 
-- ```GET /api/v1/resources```
-This return all the resources available in the database, it is possible to narrow the search down by adding a ```category``` param.  
+- `GET /api/v1/resources`
+This return all the resources available in the database, it is possible to narrow the search down by adding a `category` param.  
 These are the category options: Benefits, General, Crisis, Healthcare,
 LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
 
@@ -132,107 +113,11 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
                 "description": "Autem sapiente eaque. Eius officiis iure. Est sint molestiae. Repellendus a odio. Iusto culpa ex."
             }
         },
-        {
-            "id": "10",
-            "type": "resources",
-            "attributes": {
-                "name": "VA Home Page",
-                "category": "General",
-                "url": "https://www.va.gov",
-                "phone": null,
-                "logo": "https://i.imgur.com/a/vCp6hgZ.png",
-                "description": "Sed officia quis. Blanditiis expedita possimus. Consequatur doloribus ipsum. Occaecati eveniet quibusdam. Consequuntur perspiciatis eum."
-            }
-        },
-        {
-            "id": "12",
-            "type": "resources",
-            "attributes": {
-                "name": "LGBT Patient Care Services",
-                "category": "General",
-                "url": "https://www.patientcare.va.gov/lgbt/index.asp",
-                "phone": null,
-                "logo": "https://i.imgur.com/a/vCp6hgZ.png",
-                "description": "Ut tempora nobis. Consequatur magni molestias. Omnis dolores officiis. Deleniti excepturi ipsam. Qui dolore temporibus."
-            }
-        },
-        {
-            "id": "15",
-            "type": "resources",
-            "attributes": {
-                "name": "National Veterans Foundation Resources",
-                "category": "General",
-                "url": "https://nvf.org/veteran-resources/",
-                "phone": null,
-                "logo": "https://i.imgur.com/ayiCqWh.png",
-                "description": "Quia magni qui. Et id a. Quia quaerat dolores. A doloremque delectus. Nemo qui repudiandae."
-            }
-        },
-        {
-            "id": "16",
-            "type": "resources",
-            "attributes": {
-                "name": "National Resource Directory",
-                "category": "General",
-                "url": "https://nrd.gov/",
-                "phone": null,
-                "logo": "https://i.imgur.com/ANYHB3I.png",
-                "description": "Et blanditiis enim. Debitis optio sapiente. Quia veritatis esse. Numquam repellat libero. Nihil architecto sed."
-            }
-        },
-        {
-            "id": "19",
-            "type": "resources",
-            "attributes": {
-                "name": "Returning Servicemembers Healthcare (OEF/OIF/OND)",
-                "category": "General",
-                "url": "https://www.va.gov/healthbenefits/apply/returning_servicemembers.asp",
-                "phone": null,
-                "logo": "https://i.imgur.com/a/vCp6hgZ.png",
-                "description": "Aut est consequatur. Ea autem ut. Vel qui reprehenderit. Voluptates tempore et. Voluptas voluptatem voluptatibus."
-            }
-        },
-        {
-            "id": "22",
-            "type": "resources",
-            "attributes": {
-                "name": "VA Facilities with LGBT Program Websites",
-                "category": "General",
-                "url": "https://www.patientcare.va.gov/LGBT/VAFacilities.asp",
-                "phone": null,
-                "logo": "https://i.imgur.com/a/vCp6hgZ.png",
-                "description": "Dolor sed itaque. In velit sed. Qui enim est. Et consectetur enim. Voluptatem vel amet."
-            }
-        },
-        {
-            "id": "23",
-            "type": "resources",
-            "attributes": {
-                "name": "Military One Source",
-                "category": "General",
-                "url": "https://www.militaryonesource.mil/",
-                "phone": "(800) 342-9647",
-                "logo": "https://i.imgur.com/Ggsrbto.png",
-                "description": "Repudiandae asperiores atque. Rerum corporis expedita. Ipsum voluptate voluptates. In odio cumque. Minus natus quod."
-            }
-        },
-        {
-            "id": "26",
-            "type": "resources",
-            "attributes": {
-                "name": "DAV",
-                "category": "General",
-                "url": "https://www.dav.org/veterans/resources/",
-                "phone": null,
-                "logo": "https://i.imgur.com/QJee5nh.png",
-                "description": "Quia ipsum vel. Est sed labore. Officiis fugit deleniti. Officiis qui veniam. Sed neque qui."
-            }
-        }
     ]
 }
 ```
 
-- ```GET /api/v1/resources/:id```
+- `GET /api/v1/resources/:id`
 ```
 {
     "data": [
@@ -252,7 +137,7 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
 }
 ```
 
-- ```GET /api/v1/favorites```
+- `GET /api/v1/favorites`
 ```
 {
     "data": [
@@ -284,7 +169,7 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
 }
 ```
 
-- ```GET /api/v1/favorites/:id```
+- `GET /api/v1/favorites/:id`
 ```
 {
     "data": {
@@ -301,11 +186,11 @@ LGBT, Employment, Housing, OEF/OIF/OND, Skill Training
     }
 }
 ```
-- ```PUT /api/v1/favorites/:id```
-params that are required: ```name```, ```category```, ```url```, ```phone```, ```logo```, ```description```. They are all required in string format
+- `PUT /api/v1/favorites/:id`
+params that are required: `name`, `category`, `url`, `phone`, `logo`, `description`. They are all required in string format
 
-- ```POST /api/v1/favorites```
-params required: ```name```, ```category```, ```url```, ```phone```, ```logo```, ```description```.
+- `POST /api/v1/favorites`
+params required: `name`, `category`, `url`, `phone`, `logo`, `description`.
 
 ```
 {
@@ -320,12 +205,12 @@ params required: ```name```, ```category```, ```url```, ```phone```, ```logo```,
     "logo": "https://i.imgur.com/Ggsrbto.png"
 }
 ```
-- ```DELETE /api/v1/favorites/:id```
+- `DELETE /api/v1/favorites/:id`
   Allows you to delete any favorite.
 
 ## How to run the test suite
 
-  If you are interested in running out test suit you can do so by using the command ```rspec```.
+  If you are interested in running out test suit you can do so by using the command `rspec`.
   We have both model, service and integration tests written and our Coverage using SimpleCov is as 100%.
 
   here are some examples of our tests:
