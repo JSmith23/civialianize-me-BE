@@ -6,6 +6,8 @@ once they leave military service.
 In this API we gathered a lot of great resources and we have grouped them by catergory for easy searches.
 You have also have the possibility of finding the neared VA facilities based on the location you input.
 
+You can find the App we created consuming this API at: https://github.com/maddyg91/civilianize-me-FE
+
 ## Getting started
 Clone this repository to your local machine by running this command:
 ```
